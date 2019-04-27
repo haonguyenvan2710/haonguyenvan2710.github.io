@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700,900");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    background: url(./img/hero-bg.jpg);
+    background-attachment: fixed;
+}
+
+.btn {
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    background: transparent;
+    display: inline-block;
+}
+
+.btn--success {
+    border-color: #00ff6c;
+    color: #00ff6c;
+}
+
+.btn--success:hover {
+    color: #222;
+    background: #00ff6c;
+}
+
+.btn--dark {
+    border-color: #222;
+    color: #222;
+}
+
+.btn--dark:hover {
+    background: #222;
+    color: #00ff6c;
+}
+
+
+.clear-fix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.header__logo {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.header__menu {
+    text-align: center;
+    list-style: none;
+}
+
+.header__menu-item {
+    display: inline-block;
+}
+
+.header__menu-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: block;
+    padding: 0.5rem 2rem;
+    /* margin-right: 2rem; */
+    /* display: inline-block; */
+}
+
+.header__menu-link::after {
+    content: "";
+    display: block;
+    height: 0.5rem;
+    width: 0;
+    background-color: #00ff6c;
+    transition: 0.5s;
+}
+
+.header__menu-link:hover::after {
+    width: 100%;
+}
+
+.slogan {
+    color: white;
+    text-align: center;
+    padding: 15rem 2rem;
+}
+
+.slogan__title {
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.slogan__btn {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+}
+
+.content {
+    background: url(./img/who-we-are.jpg) no-repeat center/cover;
+}
+
+.content__description-wrapper {
+    background-color: #2e2e2e;
+    padding: 2rem 4rem 4rem;
+}
+
+.content__description {
+    border: 2px solid #00ff6c;
+    background-color: #2e2e2e;
+}
+
+.content__description-title {
+    color: #00ff6c;
+    font-size: 3rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.content__description-text {
+    font-size: 2.4rem;
+    color: white;
+    padding: 2rem 4rem;
+}
+
+.gallery {
+    background-color: white;
+}
+
+.gallery__title {
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.gallery__image {
+    font-size: 0;
+}
+
+.gallery__image-item {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    font-size: 1.6rem;
+}
+.gallery__image-item::before {
+    content: "";
+    display: block;
+    padding-top: 75%;
+}
+/* 
+padding-top % theo width của thằng cha
+
+yêu cầu là thằng cha phải cần có chiều rộng : chiều cao = 4 : 3
+Mình đã có chiều rộng => mình cần tạo ra chiều cao chạy theo chiều rộng
+
+thằng cha này chỉ biết 1 thằng con -> before => chiều cao thằng này = chiều cao của thằng before
+
+height cha = height của before
+height before = padding-top của nó = 75% x width của thằng cha
+
+=> height cha = 75% x width của thằng cha
+tỉ lệ 4:3
+*/
+
+.gallery__image-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery__image-description {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 2;
+    /* top: 50%; */
+    bottom: 0;
+    width: 100%;
+    min-height: 50%;
+    text-align: center;
+    /* 
+    height chạy theo nội dung, nhưng nếu nội dung ko đủ cao 50%
+    => muốn bao bọc có chiều cao tối thiểu là 50% thằng cha, dù nội dung của nó có đủ hay ko
+    => min-height: 50% 
+    => Nhưng nếu nội dung cao hơn 50% -> height vẫn chạy theo nội dung (ko bị giới hạn trong 50%)
+    */
+}
+
+.gallery__image-title {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.gallery__image-btn {
+    font-size: 1.5rem;
+    border-width: 1px;
+    /* display: inline-block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    color: #00ff6c;
+    border: 0.1rem solid #00ff6c;
+    padding: 1rem 2rem; */
+}
+
+
+.note {
+    background-color: #00ff6c;
+    color: black;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.note h1 {
+    font-size: 3rem;
+}
+
+.note p {
+    font-size: 3rem;
+    padding-bottom: 3rem;
+}
+
+.note__btn {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: black;
+    border: 0.1rem solid black;
+    padding: 0.5rem 2rem;
+}
+
+.footer {
+    background-color: #2e2e2e;
+    color: white;
+    padding: 4rem 1rem;
+}
+
+.above-footer {
+    font-size: 1.6rem;
+}
+
+.below-footer {
+    font-size: 0;
+}
+
+.below-footer__list {
+    font-size: 1.5rem;
+    display: inline-block;
+    width: calc(100% / 3);
+    padding: 1rem 0;
+}
+
+.below-footer__list li {
+    list-style: none;
+}
+
+
+.img-show {
+    position: fixed;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.img-show::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.img-show .close {
+    position: absolute;
+    border-radius: 5px;
+    top: 20px;
+    right: 20px;
+    background: red;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+
+}
+.img-show img {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    object-fit: contain;
+}
+.img-show:target {
+    /* Khi mà nó trở thành mục tiêu trên cái đường dẫn */
+    /* 
+    ví dụ: thằng này có id là abc
+    Khi trên đường dẫn có xuất hiện #abc ở sau
+    -> code ở trong này sẽ có hiệu lực
+    */
+    display: block;
+}
+
+@media only screen and (min-width: 576px) {
+    .header {
+        font-size: 0;
+        padding: 0 2rem;
+    }
+
+    .header__logo {
+        display: inline-block;
+        vertical-align: middle;
+        width: 30%;
+        text-align: left;
+    }
+
+    .header__menu {
+        width: 70%;
+        text-align: right;
+        margin-top: 2rem;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .gallery__image-item {
+        width: 50%;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .content {
+        height: 70rem;
+        position: relative;
+    }
+    .content__description-wrapper {
+        position: absolute;
+        top: -5rem;
+        left: 2rem;
+        width: 50%;
+        min-width: 60rem;
+    }
+
+    .gallery__image-item {
+        width: calc(100% / 3);
+    }
+    .gallery__image-description {
+        transform: translateY(100%);
+        /* transition theo lý thuyết: nó sẽ ko tự áp dụng cho lần đầu tiên load trang
+        Duy nhất chỉ có chrome bị lỗi này => solution: chỉ cần thêm 1 thẻ script cuối cùng
+        */
+        transition: transform 0.3s;
+    }
+    .gallery__image-item:hover .gallery__image-description {
+        transform: translateY(0);
+    }
+}
+
+
+/* 
+
+
+GIT là gì
+    Giúp minh quản lý code, trao đổi code
+
+Github là 1 trang sử dụng git, mục đích của trang này là lưu trữ code
+Máy A và máy B -> cần kho chung để lưu
+A -> kho đó -> lấy về
+B -> kho đó -> lấy về
+
++ cho chạy code tĩnh: host github
++ mỗi ng nó sẽ cho 1 tên miền: bonus -> mua tên miền gắn vô
+
+
+Tên miền chẳng qua là 1 mặt nạ
+
+// dữ liệu, server, client
+Host: chạy code trên đó, như máy tính của mình nhưng ở online
+-> địa chỉ ip: http://178.128.60.109/ => khó nhớ
+Mua tên miền: Khi anh vô tên miền abc.com => http://178.128.60.109/
+
+*/
